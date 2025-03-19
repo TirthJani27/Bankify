@@ -121,10 +121,3 @@
     @apply bg-background text-foreground;
   }
 }
-h1 {
-  font-size: 2.5rem; /* Example size */
-  font-weight: bold;
-}
-h2 {
-  font-size: 1.5rem;
-}
