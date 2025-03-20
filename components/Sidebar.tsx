@@ -5,6 +5,7 @@ import React from "react";
 import { sidebarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import Footer from "./Footer";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Sidebar = ({ user }: SiderbarProps) => {
@@ -13,10 +14,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
   return (
     <section className="sticky left-0 top-0 flex h-screen w-fit flex-col  justify-between border-r border-gray-200 bg-white pt-8 text-white max-md:hidden sm:p-4 xl:p-6 2xl:w-[355px]">
       <nav className="flex  flex-col gap-4">
-        <Link
-          href="/"
-          className="cursor-pointer flex items-center mb-12 gap-2"
-        >
+        <Link href="/" className="cursor-pointer flex items-center mb-12 gap-2">
           <Image
             src="/icons/logo.svg"
             width={34}
@@ -50,7 +48,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
               ></Image>
               <p
                 className={cn(
-                  `text-16 font-semibold text-black-2 max-xl:hidden`,
+                  `text-16 font-semibold text-black-2 max-xl:hidden text-black`,
                   { "!text-white": isActive }
                 )}
               >
@@ -59,9 +57,9 @@ const Sidebar = ({ user }: SiderbarProps) => {
             </Link>
           );
         })}
-        User 
+        User
       </nav>
-      Footer
+      <Footer user={user} type="desktop" />
     </section>
   );
 };

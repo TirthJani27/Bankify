@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import BankCard from "./BankCard";
-import { userInfo } from "os";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
@@ -17,13 +16,11 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
         <div className="relative flex px-6 max-xl:justify-center">
           <div className="flex-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile flex justify-center">
             <span className="text-5xl font-bold text-blue-500 ">
-              {user.firstName[0]}
+              {user?.name[0] || "ABC"}
             </span>
           </div>
           <div className="flex flex-col pt-24">
-            <h1>
-              {user.firstName} {user.lastName}
-            </h1>
+            <h1>{user?.name}</h1>
             <div className="text-[16px] font-normal text-gray-600">
               {user.email}
             </div>
@@ -49,7 +46,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
               <BankCard
                 key={banks[0].id}
                 account={banks[0]}
-                userName={`${user.firstName} ${user.lastName}`}
+                userName={`${user.name}`}
                 showBalance={false}
               />
             </div>

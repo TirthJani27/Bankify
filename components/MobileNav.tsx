@@ -7,8 +7,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { sidebarLinks } from "@/constants";
+import Footer from "./Footer";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathName = usePathname();
   return (
@@ -73,6 +73,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
               </nav>
             </SheetClose>
           </div>
+          <Footer user={user} type="mobile" />
         </SheetContent>
       </Sheet>
     </section>
